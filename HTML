@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sameer's STEM Journey</title>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Light cold blue */
+            color: #333;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        header {
+            background-color: #d0e7ff;
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 5px solid #8ab6d6;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .goal {
+            background-color: #e6f2ff;
+            border-left: 6px solid #6699cc;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .media {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .media img, iframe {
+            max-width: 100%;
+            border: 2px solid #aaccee;
+            border-radius: 8px;
+        }
+
+        .game-section {
+            background-color: #f9fcff;
+            padding: 20px;
+            border: 2px dashed #8ab6d6;
+            margin-top: 40px;
+        }
+
+        .game {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .card {
+            background-color: #d6eaff;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            background-color: #b3d9ff;
+        }
+
+        .matched {
+            background-color: #a0e6a0 !important;
+            cursor: default;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #d0e7ff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sameer's STEM Journey</h1>
+        <p>Exploring technology, data, and the world of computing!</p>
+    </header>
+
+    <section>
+        <h2>📘 My Future Plans</h2>
+        <div class="goal">
+            After high school, I want to study something **STEM-related** — probably computer science or engineering.  
+          
+        </div>
+    </section>
+
+    <section class="media">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Analog_vs_digital_signal.png" alt="Analog vs Digital (Unit 1)" width="300">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Internet_map_1024.jpg/640px-Internet_map_1024.jpg" alt="Computer Networks Map (Unit 2)" width="300">
+    </section>
+
+    <section class="media">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7_LPdttKXPc" 
+        title="How the Internet Works" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="game-section">
+        <h2>🎮 Vocabulary Matching Game</h2>
+        <p>Match each vocabulary word with its correct definition!</p>
+        <div class="game" id="game-board">
+            <!-- Game cards go here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>Created by Sameer • Powered by GitHub Pages</p>
+    </footer>
+
+    <script>
+        const vocabPairs = [
+            ["bit", "A binary digit, either 0 or 1."],
+            ["byte", "A sequence of 8 bits."],
+            ["roundoff", "Error from not enough bits to represent full precision."],
+            ["lossless", "Compression that preserves all original data."],
+            ["lossy", "Compression that discards some data."],
+            ["metadata", "Data about data (e.g., file info)."],
+            ["computing device", "A physical device that can run a program."],
+            ["bandwidth", "Maximum transmission capacity (bps)."],
+            ["protocol", "A set of rules for how devices communicate."],
+            ["packet", "Small chunk of data sent over a network."]
+        ];
+
+        let gameBoard = document.getElementById("game-board");
+        let cards = [];
+
+        vocabPairs.forEach(pair => {
+            cards.push({ type: "term", content: pair[0] });
+            cards.push({ type: "definition", content: pair[1] });
+        });
+
+        // Shuffle
+        cards = cards.sort(() => 0.5 - Math.random());
+
+        // Render cards
+        cards.forEach((card, index) => {
+            let div = document.createElement("div");
+            div.classList.add("card");
+            div.textContent = card.content;
+            div.dataset.index = index;
+            div.dataset.type = card.type;
+            div.addEventListener("click", handleCardClick);
+            gameBoard.appendChild(div);
+        });
+
+        let selected = [];
+        function handleCardClick() {
+            if (this.classList.contains("matched") || selected.includes(this)) return;
+
+            this.style.backgroundColor = "#ffe699";
+            selected.push(this);
+
+            if (selected.length === 2) {
+                let [first, second] = selected;
+                let firstContent = first.textContent;
+                let secondContent = second.textContent;
+
+                let match = vocabPairs.find(pair => {
+                    return (pair[0] === firstContent && pair[1] === secondContent) ||
+                           (pair[0] === secondContent && pair[1] === firstContent);
+                });
+
+                if (match) {
+                    first.classList.add("matched");
+                    second.classList.add("matched");
+                } else {
+                    setTimeout(() => {
+                        first.style.backgroundColor = "";
+                        second.style.backgroundColor = "";
+                    }, 1000);
+                }
+
+                selected = [];
+            }
+        }
+    </script>
+
+</body>
+</html>
