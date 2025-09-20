@@ -2,197 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sameer's Website</title>
+    <title>Sameer's STEM Journey</title>
     <style>
         body {
-            background-color: #f0f8ff; /* Light cold blue */
+            background-color: #f0f4ff;
+            font-family: Arial, sans-serif;
             color: #333;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        h1, h2 {
-            font-family: 'Times New Roman', Times, serif;
+        header {
+            background: linear-gradient(to right, #6a85b6, #bac8f3);
+            padding: 20px;
+            text-align: center;
+            color: white;
         }
 
-        header {
-            background-color: #d0e7ff;
-            text-align: center;
-            padding: 30px 20px;
-            border-bottom: 5px solid #8ab6d6;
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
 
         section {
-            padding: 20px;
-            max-width: 800px;
+            padding: 40px 20px;
+            max-width: 900px;
             margin: auto;
         }
 
-        .goal {
-            background-color: #e6f2ff;
-            border-left: 6px solid #6699cc;
-            padding: 15px;
+        h2 {
+            color: #4b60a8;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
             margin: 20px 0;
         }
 
-        .media {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .media img, iframe {
-            max-width: 100%;
-            border: 2px solid #aaccee;
-            border-radius: 8px;
-        }
-
-        .game-section {
-            background-color: #f9fcff;
+        .game-box {
+            background-color: #ffffff;
             padding: 20px;
-            border: 2px dashed #8ab6d6;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-top: 40px;
         }
 
-        .game {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+        .hidden {
+            display: none;
         }
 
-        .card {
-            background-color: #d6eaff;
-            padding: 10px;
+        .question {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
             border-radius: 8px;
             cursor: pointer;
-            text-align: center;
-            transition: 0.3s;
         }
 
-        .card:hover {
-            background-color: #b3d9ff;
+        button:hover {
+            background-color: #5548d9;
         }
 
-        .matched {
-            background-color: #a0e6a0 !important;
-            cursor: default;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #d0e7ff;
-            margin-top: 40px;
+        .cat-img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Sameer's STEM Journey</h1>
-        <p>Exploring technology, data, and the world of computing!</p>
-    </header>
+<header>
+    <h1>Sameer</h1>
+    <p>Future Engineer or Computer Scientist 🚀</p>
+</header>
 
-    <section>
-        <h2>📘 My Future Plans</h2>
-        <div class="goal">
-            After high school, I want to study something **STEM-related** — probably computer science or engineering.  
-          
-        </div>
-    </section>
+<section>
+    <h2>🌟 My Plan After High School</h2>
+    <p>Hey there! I'm planning to study something STEM-related after high school – probably engineering or computer science. I'm super interested in how computing devices work and how data flows through computer networks.</p>
 
-    <section class="media">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Analog_vs_digital_signal.png" alt="Analog vs Digital (Unit 1)" width="300">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Internet_map_1024.jpg/640px-Internet_map_1024.jpg" alt="Computer Networks Map (Unit 2)" width="300">
-    </section>
+    <p>I've learned that even a small <strong>bit</strong> (like a 0 or 1) can be powerful. And a <strong>byte</strong>, made up of 8 bits, stores data like text and images. Sometimes data gets compressed in a <strong>lossy</strong> way (which loses some info) or a <strong>lossless</strong> way (which keeps everything). There's also cool stuff like <strong>metadata</strong>, which is basically data about data!</p>
 
-    <section class="media">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/7_LPdttKXPc" 
-        title="How the Internet Works" frameborder="0" allowfullscreen></iframe>
-    </section>
+    <p>I'm also into how the internet works – all those <strong>computing devices</strong> connected by <strong>protocols</strong> and <strong>routers</strong> that help data travel as <strong>packets</strong>. The <strong>DNS</strong> translates things like <strong>URLs</strong> into <strong>IP addresses</strong>, and <strong>TCP</strong> and <strong>UDP</strong> make sure it gets there (hopefully in the right order!). It’s all designed with <strong>fault tolerance</strong> and <strong>scalability</strong> in mind so it can grow and still work even if parts fail.</p>
+</section>
 
-    <section class="game-section">
-        <h2>🎮 Vocabulary Matching Game</h2>
-        <p>Match each vocabulary word with its correct definition!</p>
-        <div class="game" id="game-board">
-            <!-- Game cards go here -->
-        </div>
-    </section>
+<section>
+    <h2>🖼️ Cool STEM Pics</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Binary_Code.jpg/640px-Binary_Code.jpg" alt="Binary code (data)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Internet_map_1024.jpg/640px-Internet_map_1024.jpg" alt="Internet map">
+</section>
 
-    <footer>
-        <p>Created by Sameer • Powered by GitHub Pages</p>
-    </footer>
+<section>
+    <h2>🎥 How the Internet Works</h2>
+    <iframe width="100%" height="400" src="https://www.youtube.com/embed/x3c1ih2NJEg" 
+    title="How the Internet Works" frameborder="0" allowfullscreen></iframe>
+</section>
 
-    <script>
-        const vocabPairs = [
-            ["bit", "A binary digit, either 0 or 1."],
-            ["byte", "A sequence of 8 bits."],
-            ["roundoff", "Error from not enough bits to represent full precision."],
-            ["lossless", "Compression that preserves all original data."],
-            ["lossy", "Compression that discards some data."],
-            ["metadata", "Data about data (e.g., file info)."],
-            ["computing device", "A physical device that can run a program."],
-            ["bandwidth", "Maximum transmission capacity (bps)."],
-            ["protocol", "A set of rules for how devices communicate."],
-            ["packet", "Small chunk of data sent over a network."]
-        ];
+<section class="game-box">
+    <h2>🧠 Vocabulary Game</h2>
+    <div id="quiz">
+        <div class="question" id="question"></div>
+        <div id="options"></div>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="result" class="hidden">
+        <h3>🎉 Great job!</h3>
+        <p>You really know your stuff. Here's a cat to celebrate:</p>
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Congrats Cat" class="cat-img">
+    </div>
+</section>
 
-        let gameBoard = document.getElementById("game-board");
-        let cards = [];
-
-        vocabPairs.forEach(pair => {
-            cards.push({ type: "term", content: pair[0] });
-            cards.push({ type: "definition", content: pair[1] });
-        });
-
-        // Shuffle
-        cards = cards.sort(() => 0.5 - Math.random());
-
-        // Render cards
-        cards.forEach((card, index) => {
-            let div = document.createElement("div");
-            div.classList.add("card");
-            div.textContent = card.content;
-            div.dataset.index = index;
-            div.dataset.type = card.type;
-            div.addEventListener("click", handleCardClick);
-            gameBoard.appendChild(div);
-        });
-
-        let selected = [];
-        function handleCardClick() {
-            if (this.classList.contains("matched") || selected.includes(this)) return;
-
-            this.style.backgroundColor = "#ffe699";
-            selected.push(this);
-
-            if (selected.length === 2) {
-                let [first, second] = selected;
-                let firstContent = first.textContent;
-                let secondContent = second.textContent;
-
-                let match = vocabPairs.find(pair => {
-                    return (pair[0] === firstContent && pair[1] === secondContent) ||
-                           (pair[0] === secondContent && pair[1] === firstContent);
-                });
-
-                if (match) {
-                    first.classList.add("matched");
-                    second.classList.add("matched");
-                } else {
-                    setTimeout(() => {
-                        first.style.backgroundColor = "";
-                        second.style.backgroundColor = "";
-                    }, 1000);
-                }
-
-                selected = [];
-            }
+<script>
+    const quizData = [
+        {
+            question: "What is a bit?",
+            options: ["A big data file", "A binary digit (0 or 1)", "An image format", "A router"],
+            answer: "A binary digit (0 or 1)"
+        },
+        {
+            question: "Which protocol ensures reliable data delivery?",
+            options: ["UDP", "TCP", "HTTP", "DNS"],
+            answer: "TCP"
+        },
+        {
+            question: "What does metadata describe?",
+            options: ["Binary files", "Other data", "Internet speed", "Protocols"],
+            answer: "Other data"
+        },
+        {
+            question: "What helps data packets find a path on the internet?",
+            options: ["Computers", "DNS", "Routers", "Files"],
+            answer: "Routers"
         }
-    </script>
+    ];
+
+    let current = 0;
+
+    function showQuestion() {
+        const q = quizData[current];
+        document.getElementById("question").innerText = q.question;
+        const optionsDiv = document.getElementById("options");
+        optionsDiv.innerHTML = "";
+        q.options.forEach(option => {
+            const btn = document.createElement("button");
+            btn.textContent = option;
+            btn.onclick = () => {
+                if (option === q.answer) {
+                    current++;
+                    if (current >= quizData.length) {
+                        document.getElementById("quiz").classList.add("hidden");
+                        document.getElementById("result").classList.remove("hidden");
+                    } else {
+                        showQuestion();
+                    }
+                } else {
+                    alert("Oops! Try again.");
+                }
+            };
+            optionsDiv.appendChild(btn);
+        });
+    }
+
+    function nextQuestion() {
+        showQuestion();
+    }
+
+    showQuestion();
+</script>
 
 </body>
 </html>
