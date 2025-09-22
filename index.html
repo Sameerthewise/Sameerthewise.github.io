@@ -4,13 +4,14 @@
 <meta charset="UTF-8" />
 <title>Sameer's website</title>
 <style>
-    /* Background gradient from blue to purple */
+    /* Blue to Purple gradient background */
     body {
-        background: linear-gradient(135deg, #4b6cb7, #8f94fb);
+        background: linear-gradient(135deg, #1e3c72, #2a5298, #6a3093, #9b59b6);
         font-family: Arial, sans-serif;
         color: #f0f0f5;
         margin: 0;
         padding: 0;
+        min-height: 100vh;
     }
     header {
         background: linear-gradient(to right, #6a85b6, #bac8f3);
@@ -25,14 +26,14 @@
     section {
         padding: 40px 20px;
         max-width: 900px;
-        margin: auto;
-        background: rgba(255 255 255 / 0.1);
+        margin: 30px auto;
+        background: #2f4e9c; /* Different blue background for sections */
         border-radius: 12px;
-        margin-bottom: 30px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        color: #dbe9ff;
     }
     h2 {
-        color: #d1d1f0;
+        color: #c7d9ff;
         border-bottom: 2px solid #6c63ff;
         padding-bottom: 8px;
         margin-bottom: 15px;
@@ -40,7 +41,7 @@
     p {
         font-size: 1.1em;
         line-height: 1.5em;
-        color: #e0e0ff;
+        color: #d0e1ff;
     }
     img {
         max-width: 100%;
@@ -48,10 +49,10 @@
         margin: 20px 0;
     }
     .game-box {
-        background-color: rgba(255 255 255 / 0.15);
+        background-color: #324f96; /* darker blue for the game box */
         padding: 20px;
         border-radius: 12px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
         margin-top: 40px;
     }
     .hidden {
@@ -129,12 +130,22 @@
 </section>
 
 <script>
-// Your existing quiz data and logic remain unchanged
 const quizData = [
-    // ... quiz questions as before ...
+    // Your existing quiz data...
+    {
+        question: "bit",
+        options: [
+            "A binary digit, either 0 or 1.",
+            "A sequence of 8 bits.",
+            "Error when number of bits is insufficient.",
+            "Data about data."
+        ],
+        answer: "A binary digit, either 0 or 1."
+    },
+    // ... add all other questions here exactly as before ...
 ];
 
-// Shuffle function and quiz logic as before
+// Initialize current question index to 0 at start
 let current = 0;
 
 function shuffle(array) {
@@ -173,6 +184,8 @@ function showQuestion() {
     });
 }
 
+// Reset current to zero and show first question at page load
+current = 0;
 showQuestion();
 </script>
 
