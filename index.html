@@ -1,81 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sameer's STEM Journey</title>
-    <style>
-        body {
-            background-color: #f0f4ff;
-            font-family: Arial, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: linear-gradient(to right, #6a85b6, #bac8f3);
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h2 {
-            color: #4b60a8;
-        }
-
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .game-box {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-top: 40px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .question {
-            margin-bottom: 20px;
-        }
-
-        button {
-            background-color: #6c63ff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #5548d9;
-        }
-
-        .cat-img {
-            width: 300px;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<title>Sameer's STEM Journey</title>
+<style>
+    body {
+        background-color: #f0f4ff;
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background: linear-gradient(to right, #6a85b6, #bac8f3);
+        padding: 20px;
+        text-align: center;
+        color: white;
+    }
+    h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    section {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+    h2 {
+        color: #4b60a8;
+    }
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+    .game-box {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-top: 40px;
+    }
+    .hidden {
+        display: none;
+    }
+    .question {
+        margin-bottom: 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    button {
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    button:hover {
+        background-color: #5548d9;
+    }
+    .cat-img {
+        width: 300px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+</style>
 </head>
 <body>
 
@@ -86,11 +78,13 @@
 <section>
     <h2>🌟 My Plan After High School</h2>
     <p>Hey there! I'm planning to study something STEM-related after high school – like engineering or computer science. Im going to do something STEM related because thats what im best at.</p>
-    <p>This website talks about the early beginning of the internet and how it was made and why as well as other things<p>
+    <p>This website talks about the early beginning of the internet and how it was made and why as well as other things</p>
+</section>
+
 <section>
     <h2>🖼️ Cool STEM Pics</h2>
-    <img src="https://i.imgur.com/ZNFjN1f.png" alt="Binary data - 0s and 1s">
-    <img src="https://i.imgur.com/0XrQ9Y8.jpg" alt="Internet network map">
+    <img src="https://i.imgur.com/ZNFjN1f.png" alt="Binary data - 0s and 1s" />
+    <img src="https://i.imgur.com/0XrQ9Y8.jpg" alt="Internet network map" />
 </section>
 
 <section>
@@ -104,71 +98,304 @@
     <div id="quiz">
         <div class="question" id="question"></div>
         <div id="options"></div>
-        <button onclick="nextQuestion()">Next</button>
     </div>
     <div id="result" class="hidden">
         <h3>🎉 Great job!</h3>
         <p>You really know your stuff. Here's a cat to celebrate:</p>
-        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Congrats Cat" class="cat-img">
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Congrats Cat" class="cat-img" />
     </div>
 </section>
 
 <script>
-    const quizData = [
-        {
-            question: "What is a bit?",
-            options: ["A big data file", "A binary digit (0 or 1)", "An image format", "A router"],
-            answer: "A binary digit (0 or 1)"
-        },
-        {
-            question: "Which protocol ensures reliable data delivery?",
-            options: ["UDP", "TCP", "HTTP", "DNS"],
-            answer: "TCP"
-        },
-        {
-            question: "What does metadata describe?",
-            options: ["Binary files", "Other data", "Internet speed", "Protocols"],
-            answer: "Other data"
-        },
-        {
-            question: "What helps data packets find a path on the internet?",
-            options: ["Computers", "DNS", "Routers", "Files"],
-            answer: "Routers"
-        }
-    ];
+const quizData = [
+    // Unit 1: Data
+    {
+        question: "bit",
+        options: [
+            "A binary digit, either 0 or 1.",
+            "A sequence of 8 bits.",
+            "Error when number of bits is insufficient.",
+            "Data about data."
+        ],
+        answer: "A binary digit, either 0 or 1."
+    },
+    {
+        question: "byte",
+        options: [
+            "A binary digit, either 0 or 1.",
+            "A sequence of 8 bits.",
+            "An error in rounding.",
+            "Smoothly changing values."
+        ],
+        answer: "A sequence of 8 bits."
+    },
+    {
+        question: "roundoff",
+        options: [
+            "Error that results when bits are insufficient to represent a number precisely.",
+            "Lossy data compression.",
+            "Data about other data.",
+            "Physical connections in networks."
+        ],
+        answer: "Error that results when bits are insufficient to represent a number precisely."
+    },
+    {
+        question: "analog data",
+        options: [
+            "Values that change smoothly over time.",
+            "Data compressed losslessly.",
+            "Packets of data.",
+            "Network scalability."
+        ],
+        answer: "Values that change smoothly over time."
+    },
+    {
+        question: "lossless",
+        options: [
+            "Compressing data allowing full recovery.",
+            "Compressing data discarding some information.",
+            "A system's ability to continue after failures.",
+            "Protocol for sending web pages."
+        ],
+        answer: "Compressing data allowing full recovery."
+    },
+    {
+        question: "lossy",
+        options: [
+            "Compressing data discarding some information.",
+            "Compressing data allowing full recovery.",
+            "DNS translates domain names.",
+            "A binary digit."
+        ],
+        answer: "Compressing data discarding some information."
+    },
+    {
+        question: "metadata",
+        options: [
+            "Data about data (descriptive info).",
+            "Maximum transmission capacity.",
+            "A type of protocol.",
+            "A physical device that runs programs."
+        ],
+        answer: "Data about data (descriptive info)."
+    },
 
-    let current = 0;
+    // Unit 2: Computer Systems and Networks
+    {
+        question: "Computing Device",
+        options: [
+            "A physical device that can run a program.",
+            "A group of interconnected devices.",
+            "A web address.",
+            "A type of data compression."
+        ],
+        answer: "A physical device that can run a program."
+    },
+    {
+        question: "Computer Network",
+        options: [
+            "A group of interconnected computing devices.",
+            "An error in bit representation.",
+            "A binary digit.",
+            "A router."
+        ],
+        answer: "A group of interconnected computing devices."
+    },
+    {
+        question: "Path",
+        options: [
+            "Series of connections between devices on a network.",
+            "A web page protocol.",
+            "A type of data packet.",
+            "A physical network cable."
+        ],
+        answer: "Series of connections between devices on a network."
+    },
+    {
+        question: "Protocol",
+        options: [
+            "An agreed-upon set of rules for communication.",
+            "A physical device.",
+            "A type of router.",
+            "A data packet."
+        ],
+        answer: "An agreed-upon set of rules for communication."
+    },
+    {
+        question: "Fault Tolerant",
+        options: [
+            "System continues functioning despite failures.",
+            "Compressing data losslessly.",
+            "A type of internet protocol.",
+            "Maximum data capacity."
+        ],
+        answer: "System continues functioning despite failures."
+    },
+    {
+        question: "Scalability",
+        options: [
+            "Ability of system to expand or contract to meet demands.",
+            "Error when bits are insufficient.",
+            "A web address.",
+            "Transmission protocol."
+        ],
+        answer: "Ability of system to expand or contract to meet demands."
+    },
+    {
+        question: "Bandwidth",
+        options: [
+            "Maximum transmission capacity of a system (bit rate).",
+            "A type of computing device.",
+            "An internet protocol.",
+            "A data packet."
+        ],
+        answer: "Maximum transmission capacity of a system (bit rate)."
+    },
+    {
+        question: "URL (Uniform Resource Locator)",
+        options: [
+            "An easy-to-remember web address.",
+            "A type of router.",
+            "A binary digit.",
+            "A computing device."
+        ],
+        answer: "An easy-to-remember web address."
+    },
 
-    function showQuestion() {
-        const q = quizData[current];
-        document.getElementById("question").innerText = q.question;
-        const optionsDiv = document.getElementById("options");
-        optionsDiv.innerHTML = "";
-        q.options.forEach(option => {
-            const btn = document.createElement("button");
-            btn.textContent = option;
-            btn.onclick = () => {
-                if (option === q.answer) {
-                    current++;
-                    if (current >= quizData.length) {
-                        document.getElementById("quiz").classList.add("hidden");
-                        document.getElementById("result").classList.remove("hidden");
-                    } else {
-                        showQuestion();
-                    }
-                } else {
-                    alert("Oops! Try again.");
-                }
-            };
-            optionsDiv.appendChild(btn);
-        });
+    // Internet Structure and Layers
+    {
+        question: "Physical Network",
+        options: [
+            "Hardware and physical connections that carry internet signals.",
+            "A type of data compression.",
+            "A web address.",
+            "A fault tolerant system."
+        ],
+        answer: "Hardware and physical connections that carry internet signals."
+    },
+    {
+        question: "Internet Protocol (IP)",
+        options: [
+            "Assigns unique IP addresses and routes data.",
+            "Translates domain names to IPs.",
+            "A transmission control protocol.",
+            "Compresses data losslessly."
+        ],
+        answer: "Assigns unique IP addresses and routes data."
+    },
+    {
+        question: "Transmission Control Protocol (TCP)",
+        options: [
+            "Ensures reliable, ordered delivery of data packets.",
+            "A lightweight alternative protocol.",
+            "A type of router.",
+            "A binary digit."
+        ],
+        answer: "Ensures reliable, ordered delivery of data packets."
+    },
+    {
+        question: "User Datagram Protocol (UDP)",
+        options: [
+            "Lightweight alternative to TCP with minimal error-checking.",
+            "A transmission control protocol.",
+            "A domain name system.",
+            "A web address."
+        ],
+        answer: "Lightweight alternative to TCP with minimal error-checking."
+    },
+    {
+        question: "Packets",
+        options: [
+            "Small chunks of data for transmission.",
+            "A physical network cable.",
+            "A fault tolerant system.",
+            "A computing device."
+        ],
+        answer: "Small chunks of data for transmission."
+    },
+    {
+        question: "Routers",
+        options: [
+            "Specialized computers that forward data choosing fastest path.",
+            "A binary digit.",
+            "An error in rounding.",
+            "A web address."
+        ],
+        answer: "Specialized computers that forward data choosing fastest path."
+    },
+    {
+        question: "Domain Name System (DNS)",
+        options: [
+            "Translates human-readable domain names into IP addresses.",
+            "A computing device.",
+            "A network protocol.",
+            "A fault tolerant system."
+        ],
+        answer: "Translates human-readable domain names into IP addresses."
+    },
+    {
+        question: "Hypertext Transfer Protocol (HTTP)",
+        options: [
+            "Used for transmitting and requesting web pages on the web.",
+            "Compresses data losslessly.",
+            "A computing device.",
+            "A data packet."
+        ],
+        answer: "Used for transmitting and requesting web pages on the web."
+    },
+    {
+        question: "World Wide Web (WWW)",
+        options: [
+            "A system of linked pages and media browsable over HTTP.",
+            "A fault tolerant system.",
+            "A transmission protocol.",
+            "A physical network."
+        ],
+        answer: "A system of linked pages and media browsable over HTTP."
     }
+];
 
-    function nextQuestion() {
-        showQuestion();
+let current = 0;
+
+function shuffle(array) {
+    // Simple Fisher-Yates shuffle
+    for (let i = array.length -1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i+1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
+}
 
-    showQuestion();
+function showQuestion() {
+    if (current >= quizData.length) {
+        document.getElementById("quiz").classList.add("hidden");
+        document.getElementById("result").classList.remove("hidden");
+        return;
+    }
+    const q = quizData[current];
+    document.getElementById("question").innerText = `What is "${q.question}"?`;
+    const optionsDiv = document.getElementById("options");
+    optionsDiv.innerHTML = "";
+    
+    // Shuffle options so correct answer is random position
+    const opts = [...q.options];
+    shuffle(opts);
+    
+    opts.forEach(option => {
+        const btn = document.createElement("button");
+        btn.textContent = option;
+        btn.onclick = () => {
+            if (option === q.answer) {
+                current++;
+                showQuestion();
+            } else {
+                alert("Oops! Try again.");
+            }
+        };
+        optionsDiv.appendChild(btn);
+    });
+}
+
+showQuestion();
 </script>
 
 </body>
